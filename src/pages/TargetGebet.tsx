@@ -1,6 +1,6 @@
-import { IonActionSheet, IonButton, IonButtons, IonCard, IonCol, IonContent, IonGrid, IonHeader, IonIcon, IonItem, IonItemOption, IonItemOptions, IonItemSliding, IonMenuButton, IonPage, IonRow, IonTitle, IonToolbar } from '@ionic/react';
-import { closeOutline, femaleOutline, maleOutline, personCircleOutline } from 'ionicons/icons';
-import React, { useContext, useImperativeHandle, useRef, useState } from 'react';
+import { IonActionSheet, IonButton, IonButtons,  IonCol, IonContent, IonGrid, IonHeader, IonIcon, IonItem, IonItemOption, IonItemOptions, IonItemSliding, IonMenuButton, IonPage, IonRow, IonTitle, IonToolbar } from '@ionic/react';
+import { arrowBackCircleOutline, closeOutline, femaleOutline, maleOutline, personCircleOutline, trash } from 'ionicons/icons';
+import React, { useContext, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import FriendsContext from './FriendsContext';
 import './TargetGebet.css';
@@ -52,10 +52,13 @@ const TargetGebet: React.FC = () => {
                                         <IonActionSheet isOpen={actionSheet} onDidDismiss={() => setShowActionSheet(false)}
                                             header="Yakin gak gebet dia lagi ?"
                                             buttons={[{
+                                                icon: trash,
                                                 text: "Yakin, hapus dari daftar",
                                                 handler: () => deleteFriend(ids)
                                             },
-                                            { text: "Gak yakin, kembali" }
+                                            {   
+                                                text: "Gak yakin, kembali",
+                                                icon: arrowBackCircleOutline, }
                                             ]} />
                                     }
 

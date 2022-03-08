@@ -1,4 +1,4 @@
-import { IonButtons, IonCard, IonCardContent, IonCol, IonContent, IonGrid, IonHeader, IonIcon, IonItem, IonItemOption, IonItemOptions, IonItemSliding, IonLabel, IonLoading, IonMenuButton, IonPage, IonRow, IonTitle, IonToolbar } from '@ionic/react';
+import { IonButtons, IonCard, IonCardContent, IonCol, IonContent, IonGrid, IonHeader, IonIcon, IonItem, IonItemOption, IonItemOptions, IonItemSliding, IonLoading, IonMenuButton, IonPage, IonRow, IonTitle, IonToolbar } from '@ionic/react';
 import { Swiper, SwiperSlide, } from 'swiper/react';
 import { A11y, Navigation, Pagination, Scrollbar } from 'swiper';
 
@@ -42,7 +42,7 @@ const Home: React.FC = () => {
   }
   setTimeout(() => {
       setShowLoading(false);
-  }, 2500)
+  }, 2000)
   
   return (
     <IonPage>
@@ -100,7 +100,7 @@ const Home: React.FC = () => {
                   <IonItemOptions side="end">
                     <IonItemOption color="danger" disabled={exist.indexOf(item.id) > -1} routerLink="/targetgebet" onClick={() => addFriend(item.id, item.name, item.keterangan, item.gender, item.image)}><IonIcon className="heartIcon" icon={heart} slot="icon-only" /></IonItemOption>
                   </IonItemOptions>
-                <IonLoading isOpen={showLoad} onDidDismiss={() => setShowLoading(false)} message={'Please wait...'} duration={1500}/>
+                <IonLoading isOpen={showLoad} onDidDismiss={() => setShowLoading(false)} message={'Please wait...'} duration={2000}/>
             </IonItemSliding>
           ))}
         </IonGrid>
