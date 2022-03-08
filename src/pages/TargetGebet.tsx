@@ -1,16 +1,16 @@
-import { IonButtons, IonHeader, IonIcon, IonMenuButton, IonPage, IonTitle, IonToolbar } from '@ionic/react';
-import { personCircleOutline } from 'ionicons/icons';
+import { IonActionSheet, IonButton, IonButtons, IonCard, IonCol, IonContent, IonGrid, IonHeader, IonIcon, IonItem, IonItemOption, IonItemOptions, IonItemSliding, IonMenuButton, IonPage, IonRow, IonTitle, IonToolbar } from '@ionic/react';
+import { closeOutline, femaleOutline, maleOutline, personCircleOutline } from 'ionicons/icons';
 import React, { useContext, useImperativeHandle, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
-import FriendContext from './FriendContext';
+import FriendsContext from './FriendsContext';
+import './TargetGebet.css';
 
 const TargetGebet: React.FC = () => {
-    const friendCtx = useContext(FriendContext);
+    const friendCtx = useContext(FriendsContext);
     const [actionSheet, setShowActionSheet] = useState(false);
     const [ids, setId] = useState<string>();
 
     const slidingOptionsRef = useRef<HTMLIonItemSlidingElement>(null);
-    console.log(friendCtx.friends);
 
     const deleteFriend = (id: string) => {
         slidingOptionsRef.current?.closeOpened();
@@ -28,7 +28,7 @@ const TargetGebet: React.FC = () => {
             <IonHeader>
                 <IonToolbar>
                     <IonButtons slot="start">
-                        <Link to="/target_pasangan">
+                        <Link to="/profile">
                             <IonIcon style={{ color: 'white', marginLeft: '10px' }} size='large' icon={personCircleOutline}></IonIcon>
                         </Link>
                     </IonButtons>
@@ -39,6 +39,47 @@ const TargetGebet: React.FC = () => {
                      <IonTitle id='title-toolbar' className='left-lost'>Bosen Jomblo</IonTitle>
                 </IonToolbar>
             </IonHeader>
+
+            <IonContent>
+                {friendCtx.friends.length !=0 ?
+                    friendCtx.friends.map(friend =>(
+                        <IonItemSliding key={friend.id}>
+                            <IonItemOptions  side="end">
+                                <IonItemOption onClick={() => actionSheetHandler(friend.id)} color="danger">
+                                <IonIcon className="heartIcon" icon={closeOutline} slot="icon-only" />
+                                </IonItemOption>
+                                    {ids &&
+                                        <IonActionSheet isOpen={actionSheet} onDidDismiss={() => setShowActionSheet(false)}
+                                            header="Yakin gak gebet dia lagi ?"
+                                            buttons={[{
+                                                text: "Yakin, hapus dari daftar",
+                                                handler: () => deleteFriend(ids)
+                                            },
+                                            { text: "Gak yakin, kembali" }
+                                            ]} />
+                                    }
+
+                            </IonItemOptions>
+                            <IonItem>
+                                <IonCol size='4'><img className='circle' src={friend.image} alt="" /></IonCol>
+                                <IonCol size='8' id='ion-col'>{friend.nama} <br /><br />{friend.keterangan} <br />{friend.gender == 'Female' ? <IonIcon icon={femaleOutline}/> : <IonIcon icon={maleOutline}/>} {friend.gender}</IonCol>
+                            </IonItem>
+                        </IonItemSliding>
+                    )) 
+                    
+                    : 
+                    <IonGrid>
+                        <IonRow className="centerTarget">
+                            <h2>Anda belum punya gebetan</h2>
+                        </IonRow>
+                        <IonRow className="centerTarget">
+                            <IonButton routerLink="/daftargebet">
+                                Cari Gebetan
+                            </IonButton>
+                        </IonRow>
+                    </IonGrid>
+                }
+            </IonContent>
         </IonPage>
     )
 };

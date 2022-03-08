@@ -15,6 +15,22 @@ ion-card{
     margin-inline: 0px;
 }
 
+ion-item{
+  width: 100%;
+  height: 100%;
+}
+
+#item-without-bg{
+    --background: transparent !important;
+    margin: 0px 0px 10px 0px;
+    height: 100%;
+}
+#item-without-bg2{
+  --background: transparent !important;
+  padding: 0px 0px 10px 0px;
+  height: 100%;
+}
+
 #highlight{
     height: 150px;
 }
@@ -24,6 +40,7 @@ ion-card{
 }
 
 #card-linear{
+    height: 100% ;
     width: 100%;
     margin-inline: 0px;
     display: flex;

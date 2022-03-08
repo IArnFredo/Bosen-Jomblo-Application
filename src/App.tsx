@@ -23,6 +23,8 @@ import '@ionic/react/css/display.css';
 /* Theme variables */
 import './theme/variables.css';
 import TargetGebet from './pages/TargetGebet';
+import FriendContextProvider from './pages/ContextProvider';
+import Profile from './pages/Profile';
 
 setupIonicReact();
 
@@ -30,14 +32,17 @@ const App: React.FC = () => {
   return (
     <IonApp>
       <IonReactRouter>
-          <Menu />
-          <IonRouterOutlet id="main">
-            <Route path="/" exact={true}>
-              <Redirect to="/daftargebet" />
-            </Route>
+        <Menu />
+        <IonRouterOutlet id="main">
+          <Route path="/" exact={true}>
+            <Redirect to="/daftargebet" />
+          </Route>
+          <FriendContextProvider>
             <Route path="/daftargebet" component={Home} exact={true} />
-            <Route path="/target_pasangan" component={TargetGebet} exact={true}/>
-          </IonRouterOutlet>
+            <Route path="/target_pasangan" component={TargetGebet} exact={true} />
+            <Route path="/profile" component={Profile}/>
+          </FriendContextProvider>
+        </IonRouterOutlet>
       </IonReactRouter>
     </IonApp>
   );

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import FriendContext, { Friend } from './FriendContext';
+import FriendsContext, { Friend } from './FriendsContext';
 
 
 const FriendsContextProvider: React.FC = props => {
@@ -14,6 +14,7 @@ const FriendsContextProvider: React.FC = props => {
         }
         setFriends((currFriend) => {return currFriend.concat(newFriend)})
      };
+     
     const deleteFriend1 = (id:string) => { 
         for(let i=0 ;i<friends.length; i++){
             if(friends[i].id ==id){
@@ -22,14 +23,17 @@ const FriendsContextProvider: React.FC = props => {
             }
         }
     }
+
     return (
-        <FriendContext.Provider value={{
+        <FriendsContext.Provider value={{
             friends,
             addFriend: addFriend1,
             deleteFriend: deleteFriend1
         }}>
             {props.children}
-        </FriendContext.Provider>
+        </FriendsContext.Provider>
     );
 };
 export default FriendsContextProvider;
+
+

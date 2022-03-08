@@ -52,7 +52,7 @@ const Menu: React.FC = () => {
   return (
     <IonMenu contentId="main" side='end'type="reveal">
       <IonContent>
-        <IonList style={{background: 'var(--ion-background-color)'}} id="inbox-list">
+        <IonList id="inbox-list">
           <IonListHeader>Gebet App </IonListHeader>
           <IonNote style={{color: 'var(--ion-color-grey)'}}>Meet Your Partner Here</IonNote>
           {appPages.map((appPage, index) => {
