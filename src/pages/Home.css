@@ -1,0 +1,96 @@
+ion-toolbar{
+    --background: var(--ion-color-primary);
+    --color: white;
+}
+
+ion-card-content{
+    padding-inline-end: 4px !important;
+    padding-inline-start: 4px !important;
+    justify-content: center;
+    color: var(--ion-text-color) !important;
+}
+
+ion-card{
+    width: 100%;
+    margin-inline: 0px;
+}
+
+#highlight{
+    height: 150px;
+}
+
+#ion-col{
+  color: var(--ion-text-color) !important;
+}
+
+#card-linear{
+    width: 100%;
+    margin-inline: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#line-between {
+    overflow: hidden;
+    text-align: center;
+    font-size: 1px;
+    color: #b2b1af;
+}
+
+#line-between:before,
+#line-between:after {
+  background-color: #b2b1af;
+  content: "";
+  display: inline-block;
+  height: 1px;
+  position: relative;
+  vertical-align: middle;
+  width: 100%;
+}
+
+.circle{
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background-color: #fcdad1 !important;
+    color: #e56e56 !important;
+    margin: 4px 0px 0px 0px;
+    padding: 0px 0px 0px 0px;
+    object-fit: cover;
+  }
+
+#line-between:before {
+  margin-left: -50%;
+}
+
+#line-between:after {
+  margin-right: -50%;
+}
+
+#title-toolbar{
+    color: #ffffff;
+}
+
+.swiper {
+    width: 100%;
+    height: 100%;
+}
+
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+}
+.left-lost{
+    padding-inline: 0px;
+    /* make text on right, responsive and a link to right */
+    text-align: right;
+}
+
+  /* .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+   */
