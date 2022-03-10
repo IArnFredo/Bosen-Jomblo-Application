@@ -33,7 +33,7 @@ const App: React.FC = () => {
     <IonApp>
       <IonReactRouter>
         <Menu />
-        <IonRouterOutlet id="main">
+        <IonRouterOutlet ionPage id="main">
           <Route path="/" exact={true}>
             <Redirect to="/daftargebet" />
           </Route>
