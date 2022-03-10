@@ -66,7 +66,7 @@ const Menu: React.FC = () => {
           <IonItem>
               <IonIcon slot="start" icon={moon} className="component-icon component-icon-dark" />
               <IonLabel>Dark Mode</IonLabel>
-              <IonToggle value="mushrooms" onIonChange={toggleDarkModeHandler} />
+              <IonToggle value="mushrooms" onIonChange={toggleDarkModeHandler}/>
           </IonItem>
         </IonList>
       </IonContent>

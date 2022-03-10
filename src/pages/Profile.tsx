@@ -26,7 +26,7 @@ const Profile: React.FC = () => {
             <aside className="profile-card">
 
                 <header>
-                    <img src="/assets/images/profile.jpg"/>
+                    <img src="/assets/images/profile.png"/>
                     <p>PRESS ME</p>
                     <h1>Julius Alfredo</h1>
                     <h2>- 00000036372 -</h2>

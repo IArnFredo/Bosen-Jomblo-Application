@@ -46,7 +46,7 @@ const TargetGebet: React.FC = () => {
                         <IonItemSliding key={friend.id}>
                             <IonItemOptions  side="end">
                                 <IonItemOption onClick={() => actionSheetHandler(friend.id)} color="danger">
-                                <IonIcon className="heartIcon" icon={closeOutline} slot="icon-only" />
+                                <IonIcon icon={closeOutline} slot="icon-only" />
                                 </IonItemOption>
                                     {ids &&
                                         <IonActionSheet isOpen={actionSheet} onDidDismiss={() => setShowActionSheet(false)}
