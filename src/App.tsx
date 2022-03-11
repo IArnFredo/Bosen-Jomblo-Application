@@ -26,6 +26,7 @@ import TargetGebet from './pages/TargetGebet';
 import FriendContextProvider from './pages/ContextProvider';
 import Profile from './pages/Profile';
 
+
 setupIonicReact();
 
 const App: React.FC = () => {
@@ -49,3 +50,4 @@ const App: React.FC = () => {
 };
 
 export default App;
+

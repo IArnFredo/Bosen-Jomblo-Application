@@ -1,6 +1,6 @@
 ion-toolbar{
     --background: var(--ion-color-primary);
-    --color: white;
+    --color: var(--ion-text-color);
 }
 
 ion-card-content{
@@ -102,6 +102,21 @@ ion-item{
     padding-inline: 0px;
     /* make text on right, responsive and a link to right */
     text-align: right;
+}
+
+.left-lost.ios{
+  padding-inline: 0px;
+  /* make text on right, responsive and a link to right */
+  text-align: center;
+}
+
+
+ion-menu-button.md{
+  --color: white;
+}
+
+ion-menu-button.ios{
+  --color: white;
 }
 
   /* .swiper-slide img {

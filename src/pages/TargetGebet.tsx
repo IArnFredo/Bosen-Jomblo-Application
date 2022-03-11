@@ -3,6 +3,7 @@ import { arrowBackCircleOutline, closeOutline, femaleOutline, maleOutline, perso
 import React, { useContext, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import FriendsContext from './FriendsContext';
+import { List } from './Home';
 import './TargetGebet.css';
 
 const TargetGebet: React.FC = () => {
@@ -14,6 +15,19 @@ const TargetGebet: React.FC = () => {
 
     const deleteFriend = (id: string) => {
         slidingOptionsRef.current?.closeOpened();
+        friendCtx.friends.forEach(element => {
+            if (element.id !== id) {
+                
+            }else{
+                List.push({
+                    id: element.id,
+                    name: element.nama,
+                    keterangan: element.keterangan,
+                    gender: element.gender,
+                    image: element.image
+                })
+            }
+        });
         friendCtx.deleteFriend(id);
     }
 
@@ -48,20 +62,6 @@ const TargetGebet: React.FC = () => {
                                 <IonItemOption onClick={() => actionSheetHandler(friend.id)} color="danger">
                                 <IonIcon icon={closeOutline} slot="icon-only" />
                                 </IonItemOption>
-                                    {ids &&
-                                        <IonActionSheet isOpen={actionSheet} onDidDismiss={() => setShowActionSheet(false)}
-                                            header="Yakin gak gebet dia lagi ?"
-                                            buttons={[{
-                                                icon: trash,
-                                                text: "Yakin, hapus dari daftar",
-                                                handler: () => deleteFriend(ids)
-                                            },
-                                            {   
-                                                text: "Gak yakin, kembali",
-                                                icon: arrowBackCircleOutline, }
-                                            ]} />
-                                    }
-
                             </IonItemOptions>
                             <IonItem>
                                 <IonCol size='4'><img className='circle' src={friend.image} alt="" /></IonCol>
@@ -82,6 +82,20 @@ const TargetGebet: React.FC = () => {
                         </IonRow>
                     </IonGrid>
                 }
+                    {ids &&
+                    <IonActionSheet isOpen={actionSheet} onDidDismiss={() => setShowActionSheet(false)}
+                        header="Yakin gak gebet dia lagi ?"
+                        buttons={[{
+                        icon: trash,
+                        text: "Yakin, hapus dari daftar",
+                        handler: () => deleteFriend(ids)
+                    },
+                    {   
+                        text: "Gak yakin, kembali",
+                        icon: arrowBackCircleOutline, }
+                        ]} />
+                    }
+
             </IonContent>
         </IonPage>
     )

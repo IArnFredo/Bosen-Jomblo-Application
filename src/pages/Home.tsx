@@ -40,7 +40,9 @@ const Home: React.FC = () => {
       slidingOptionsRef.current?.closeOpened();
       friendCtx.addFriend(id, nama, keterangan, gender,image)
       List.forEach((value,index)=>{
-        if(value.id===id) List.splice(index,1);
+        if(value.id===id){
+          List.splice(index,1);
+        } 
       });
       console.log(List);
       setShowLoading(true)
@@ -72,7 +74,7 @@ const Home: React.FC = () => {
             <IonCol>
               <Swiper
                 modules={[Navigation, Pagination, Scrollbar, A11y]}
-                spaceBetween={30}
+                spaceBetween={10}
                 slidesPerView={3}
                 navigation
                 pagination={{ clickable: true }}

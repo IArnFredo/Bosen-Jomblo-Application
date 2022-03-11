@@ -75,7 +75,7 @@ http://ionicframework.com/docs/theming/ */
     --ion-background-aside: url( https://hdwallsource.com/img/2022/9/night-lights-game-background-wallpaper-76343-79076-hd-wallpapers.jpg);
     --ion-color-grey: #bfbfbf;
 
-		--ion-color-primary: #52848e;
+	--ion-color-primary: #52848e;
 	--ion-color-primary-rgb: 82,132,142;
 	--ion-color-primary-contrast: #ffffff;
 	--ion-color-primary-contrast-rgb: 255,255,255;
@@ -146,7 +146,7 @@ http://ionicframework.com/docs/theming/ */
     --ion-text-color-rgb: 255,255,255;
 
     --ion-border-color: #222222;
-
+	--ion-color-aw: #7dbebf;
 
     --ion-color-step-50: #0d0d0d;
     --ion-color-step-100: #1a1a1a;
@@ -168,9 +168,13 @@ http://ionicframework.com/docs/theming/ */
     --ion-color-step-900: #e6e6e6;
     --ion-color-step-950: #f2f2f2;
 
-    --ion-item-background: white;
+    --ion-item-background: #1e1e1e;
 
-    --ion-card-background: #1c1c1d;
+    --ion-toolbar-background: #1f1f1f;
+
+    --ion-tab-bar-background: #1f1f1f;
+
+    --ion-card-background: #1e1e1e;
   }
 
   .ios ion-modal.dark {

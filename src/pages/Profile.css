@@ -1,7 +1,8 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto);
 
 #profile-content{
-    --background: var(--ion-background-profile);
+    --background: none;
+    background: var(--ion-background-profile);
 }
 
 header img {
